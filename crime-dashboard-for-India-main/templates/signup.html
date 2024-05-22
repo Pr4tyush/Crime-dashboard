@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        
+        .register-main {
+            display: flex;
+            width: 100%;
+        }
+
+        .register-left {
+            flex-grow: 1;
+            height: 100vh;
+            background-color: #E9E9E9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-left img {
+            width: 400px;
+        }
+
+        .register-right {
+            flex-grow: 1;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-right-container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register-logo {
+            align-self: center;
+            padding-top: 50px;
+        }
+
+        .register-logo img {
+            width: 50px;
+        }
+
+        .register-center {
+            text-align: center;
+            margin: auto 0;
+        }
+
+        .register-center h2 {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .register-center p {
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="text"] {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .pass-input-div {
+            position: relative;
+        }
+
+        .pass-input-div svg {
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            bottom: 35px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        form button[type="submit"] {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: black;
+            color: white;
+            transition: background 1s linear 0ms, color 500ms linear 0ms;
+        }
+
+        form button[type="submit"]:hover {
+            color: #333;
+            background-color: white;
+        }
+
+        .register-center-options {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .remember-div {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+        }
+
+        .remember-div label {
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+
+        .forgot-pass-link {
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .forgot-pass-link:hover {
+            text-decoration: underline;
+        }
+
+        .register-center-buttons {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .register-center-buttons button:nth-child(1) {
+            background-color: black;
+            color: white;
+            border: 3px solid black;
+            transition: background 1s linear 0ms, color 500ms linear 0ms;
+        }
+
+        .register-center-buttons button:nth-child(1):hover {
+            color: #333;
+            background-color: white;
+        }
+
+        .register-center-buttons button:nth-child(2) {
+            background-color: #F0F0F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+            transition: background 500ms linear 0ms;
+        }
+
+        .register-center-buttons button:nth-child(2) img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .register-center-buttons button:nth-child(2):hover {
+            background: #c4c4c4c2;
+        }
+
+        .register-bottom-p {
+            text-align: center;
+            font-size: 15px;
+            padding-bottom: 40px;
+        }
+
+        .register-bottom-p a {
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-bottom-p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-main">
+        <div class="register-left">
+            <img src="static/images/image.png" alt="Image">
+        </div>
+        <div class="register-right">
+            <div class="register-right-container">
+                <div class="register-logo">
+                    <img src="/static/images/logo.png" alt="Logo">
+                </div>
+                <div class="register-center">
+                    <h2>Sign Up</h2>
+                    <p>Create your account</p>
+                    <form action="/signup" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <div class="register-center-buttons">
+                        <!-- <button>
+                            <img src="google-logo-url-here" alt="Google Logo">
+                            Sign Up with Google
+                        </button> -->
+                    </div>
+                    <p class="register-bottom-p">Already have an account? <a href="/">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
